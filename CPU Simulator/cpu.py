@@ -60,3 +60,9 @@ class CPU:
 
 	def write_cache(self, address, value):
 		self.cache.write_cache(address, value)
+
+	def search_memory_bus(self, address):
+		return self.memory_bus.search_memory_bus(address)
+
+	def write_memory_bus(self, address, value):
+		self.memory_bus.write_memory_bus(address, value)
