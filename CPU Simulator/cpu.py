@@ -88,3 +88,18 @@ class CPU:
 			self.set_cache_flag(True)
 		if value == cache_flush_value:
 			self.flush_cache()
+
+	 # Main parser method used to interpret instructions from input file.
+    # Check value of operator and call subsequent helper function
+	def parse_instruction(self, instruction):
+		instruction_parsed = instruction.split(",")
+		print("Reading instruction: " + instruction)
+		self.increment_cpu_counter()
+		if instruction_parsed[0] == add_instruction_operator:
+			self.add_instruction(instruction_parsed[1], instruction_parsed[2], instruction_parsed[3])
+		if instruction_parsed[0] == add_i_instruction_operator:
+			self.add_i_instruction(instruction_parsed[1], instruction_parsed[2], instruction_parsed[3])
+		if instruction_parsed[0] == jump_instruction_operator:
+			self.jump_instruction(instruction_parsed[1])
+		if instruction_parsed[0] == cache_instruction_operator:
+			self.cache_instruction(instruction_parsed[1])
