@@ -26,7 +26,7 @@ def convert_register_to_index(value):
 #Cache - cache object
 #Memory Bus - memory object
 class CPU:
-	def__init__(self):
+	def __init__(self):
 		self.cpu_counter = cpu_counter_init_value
 		self.registers = [0] * number_of_registers
 		self.cache_flag = False
