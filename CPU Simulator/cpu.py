@@ -45,3 +45,18 @@ class CPU:
 	def set_cpu_counter(self, value):
 		self.cpu_counter = value
 
+	def reset_registers(self):
+		for i in range(len(self.registers)):
+			self.registers[i] = 0
+
+	def set_cache_flag(self, value):
+		self.cache_flag = value
+
+	def flush_cache(self):
+		self.cache.flush_cache()
+
+	def search_cache(self, address):
+		return self.cache.search_cache(address)
+
+	def write_cache(self, address, value):
+		self.cache.write_cache(address, value)
